@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>PrqlSharp</PackageId>
+		<Version>0.2.11</Version>
+		<Authors>Alejandro Tamayo Castillo</Authors>
+		<Owners>Alejandro Tamayo Castillo</Owners>
+		<Description>PrqlSharp offers C# bindings to the awesome PRQL rust library</Description>
+		<Copyright>MIT</Copyright>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<PackageTags>prql csharp bindings</PackageTags>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="libprql_lib.dll">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<PackagePath>runtimes\win-x64\native\</PackagePath>
+			<Pack>true</Pack>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="libprql_lib.so">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<PackagePath>runtimes\linux-x64\native\</PackagePath>
+			<Pack>true</Pack>
+		</Content>
+	</ItemGroup>
+
+</Project>
